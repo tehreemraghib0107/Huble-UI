@@ -1,5 +1,8 @@
 import { SiteHeader } from '../components/sections/SiteHeader'
 import { HeroSection } from '../components/sections/HeroSection'
+import { CompanyStrip } from '../components/sections/CompanyStrip'
+import { TrackingBenefits } from '../components/sections/TrackingBenefits'
+import { InsideHuble } from '../components/sections/InsideHuble'
 
 export function HomePage() {
   return (
@@ -8,6 +11,9 @@ export function HomePage() {
       <SiteHeader />
       <main id="main-content">
         <HeroSection />
+        <CompanyStrip />
+        <InsideHuble />
+        <TrackingBenefits />
       </main>
     </>
   )

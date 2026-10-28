@@ -1,0 +1,155 @@
+.tracking-benefits {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(68px, 8vw, 104px) 24px clamp(78px, 9vw, 116px);
+  background-color: #f3f7ef;
+  background-image: linear-gradient(120deg, #f3f7ef 0%, #f5f8f1 54%, #eff6e8 100%);
+}
+.tracking-benefits::before {
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(#ffffff2a 1px, transparent 1px), linear-gradient(90deg, #ffffff2a 1px, transparent 1px);
+  background-size: 46px 46px;
+  content: '';
+  mask-image: linear-gradient(to bottom, transparent, #000 28%, #000 78%, transparent);
+  pointer-events: none;
+}
+.tracking-benefits-heading {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+.tracking-benefits-eyebrow {
+  color: #638074;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+}
+.tracking-benefits-heading h2 {
+  margin: 14px 0 0;
+  color: #17231f;
+  font-size: clamp(34px, 4vw, 48px);
+  font-weight: 600;
+  line-height: 1.08;
+}
+.tracking-benefits-heading > p {
+  margin: 12px 0 0;
+  color: #68756f;
+  font-size: 16px;
+  line-height: 1.55;
+}
+.tracking-benefits-cta { margin-top: 22px; }
+.tracking-benefits-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  max-width: 1240px;
+  margin: 48px auto 0;
+}
+.tracking-benefit-card {
+  min-width: 0;
+  height: 294px;
+  perspective: 1200px;
+}
+.tracking-benefit-flipper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform .68s cubic-bezier(.2, .85, .2, 1);
+}
+.tracking-benefit-card:hover .tracking-benefit-flipper,
+.tracking-benefit-card:focus-within .tracking-benefit-flipper,
+.tracking-benefit-card.is-flipped .tracking-benefit-flipper {
+  transform: rotateY(180deg);
+}
+.tracking-benefit-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border: 1px solid #e1e7df;
+  border-radius: 13px;
+  backface-visibility: hidden;
+}
+.tracking-benefit-front {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 24px;
+  background: #fff;
+  box-shadow: 0 14px 30px -25px #1f46362b;
+}
+.tracking-benefit-icon { color: #294d42; }
+.tracking-benefit-copy { margin-top: auto; }
+.tracking-benefit-copy h3 {
+  margin: 0;
+  color: #1b2521;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.tracking-benefit-copy p {
+  margin: 8px 0 0;
+  color: #69756f;
+  font-size: 14px;
+  line-height: 1.55;
+}
+.tracking-benefit-toggle,
+.tracking-benefit-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: #28715c;
+  font-size: 12px;
+  font-weight: 600;
+}
+.tracking-benefit-toggle { margin-top: 19px; }
+.tracking-benefit-toggle svg { transition: transform .2s ease; }
+.tracking-benefit-toggle:hover svg { transform: translate(2px, -2px); }
+.tracking-benefit-back {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 12px;
+  background: #f6f9fa;
+  transform: rotateY(180deg);
+}
+.tracking-benefit-back .app-feature-view {
+  max-height: 100%;
+  overflow: hidden;
+}
+.tracking-benefit-back-button {
+  position: absolute;
+  right: 12px;
+  bottom: 10px;
+  z-index: 1;
+  border: 1px solid #d5e0dc;
+  border-radius: 20px;
+  padding: 6px 9px;
+  background: #ffffffed;
+  color: #3e6458;
+  font-size: 10px;
+}
+@media (max-width: 900px) {
+  .tracking-benefits-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 640px; }
+  .tracking-benefit-card { height: 276px; }
+}
+@media (max-width: 540px) {
+  .tracking-benefits { padding: 62px 20px 72px; }
+  .tracking-benefits-heading h2 { font-size: 36px; }
+  .tracking-benefits-heading > p { font-size: 14px; }
+  .tracking-benefits-grid { grid-template-columns: 1fr; gap: 12px; max-width: 360px; margin-top: 34px; }
+  .tracking-benefit-card { height: 246px; }
+  .tracking-benefit-front { padding: 21px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tracking-benefit-flipper,
+  .tracking-benefit-toggle svg { transition: none; }
+}

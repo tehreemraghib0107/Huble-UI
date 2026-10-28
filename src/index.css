@@ -112,6 +112,44 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .trial-benefits { flex-direction: column; align-items: center; }
   .trial-separator { display: none; }
 }
+
+/* Customer wordmarks: generous spacing, a soft edge fade, and a seamless loop. */
+.company-strip { position: relative; padding: 18px 0 62px; background: #fff; }
+.company-strip-heading { padding: 0 24px; text-align: center; }
+.company-strip-heading h2 { display: grid; grid-template-columns: minmax(24px, 1fr) auto minmax(24px, 1fr); align-items: center; gap: 18px; max-width: 1240px; margin: 0 auto; color: #263e38; font-size: 21px; font-weight: 500; letter-spacing: -.025em; line-height: 1.35; }
+.company-strip-heading h2::before, .company-strip-heading h2::after { height: 1px; background: #cbd1d7; content: ''; }
+.company-strip-heading p { margin: 8px 0 0; color: var(--muted); font-size: 14px; line-height: 1.5; }
+.company-marquee { max-width: 1320px; margin: 30px auto 0; overflow: hidden; mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.company-marquee-track { display: flex; width: max-content; animation: company-scroll 38s linear infinite; }
+.company-logo-group { display: flex; align-items: center; flex: 0 0 auto; gap: 76px; margin: 0; padding: 0 76px 0 0; list-style: none; }
+.company-logo { display: flex; align-items: center; justify-content: center; flex: 0 0 auto; height: 88px; color: #343a3a; white-space: nowrap; }
+.company-logo-northbeam { width: 184px; font-size: 32px; font-weight: 700; letter-spacing: -1.5px; }
+.company-logo-kestrel { width: 136px; font-family: 'Newsreader', Georgia, serif; font-size: 43px; font-style: italic; letter-spacing: -1.5px; }
+.company-logo-parallax { width: 184px; font-size: 28px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+.company-logo-stacklab { width: 168px; font-family: 'JetBrains Mono', monospace; font-size: 27px; font-weight: 500; letter-spacing: -1.6px; }
+.company-logo-meridian { width: 166px; font-size: 33px; font-weight: 500; letter-spacing: -1.6px; }
+.company-logo-foldsend { width: 164px; font-size: 32px; font-weight: 700; letter-spacing: -1.4px; }
+@media (hover: hover) {
+  .company-marquee:hover .company-marquee-track { animation-play-state: paused; }
+}
+@keyframes company-scroll {
+  to { transform: translateX(calc(-100% / 3)); }
+}
+@media (max-width: 540px) {
+  .company-strip { padding: 8px 0 42px; }
+  .company-strip-heading h2 { grid-template-columns: minmax(20px, 1fr) auto minmax(20px, 1fr); gap: 11px; }
+  .company-strip-heading h2 { font-size: 19px; }
+  .company-strip-heading p { font-size: 13px; }
+  .company-marquee { margin-top: 24px; mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent); }
+  .company-logo-group { gap: 44px; padding-right: 44px; }
+  .company-logo { height: 70px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .company-marquee { max-width: 1120px; margin-top: 30px; padding: 0 24px; mask-image: none; }
+  .company-marquee-track { display: block; width: auto; animation: none; }
+  .company-logo-group { flex-wrap: wrap; justify-content: center; gap: 12px 38px; padding: 0; }
+  .company-logo-group[aria-hidden='true'] { display: none; }
+}
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { transition: none !important; }
   .button-primary:hover { transform: none; }
@@ -142,9 +180,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .showcase-placeholder-brand { display: flex; align-items: center; gap: 8px; opacity: .18; }
 .showcase-placeholder-icon { width: 74px; height: 74px; }
 .showcase-placeholder-wordmark { width: 112px; transform: translateY(-7px); }
-.hero-motion-toggle { display: flex; align-items: center; gap: 6px; margin: 18px 0 0 auto; padding: 7px 10px; border: 1px solid #dce7e1; border-radius: 100px; color: #70877c; background: #ffffffb3; font-size: 11px; }
-.hero-motion-toggle:hover { color: var(--teal); border-color: #9fc8b8; }
-.hero-motion-paused .hub-background * { animation-play-state: paused !important; }
 @keyframes ribbon-drift {
   0%, 100% { transform: translateY(0) rotate(-2deg) scaleY(.97); }
   50% { transform: translateY(-24px) rotate(2deg) scaleY(1.04); }
@@ -173,7 +208,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 @media (prefers-reduced-motion: reduce) {
   .hub-background * { animation: none !important; }
-  .hero-motion-toggle { display: none; }
 }
 
 @media (max-width: 899px) {

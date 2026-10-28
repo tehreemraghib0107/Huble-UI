@@ -1,14 +1,11 @@
-import { useState } from 'react'
-import { Pause, Play } from 'lucide-react'
 import { signupUrl } from './SiteHeader'
 import { HubBackground } from './HubBackground'
 import { AppShowcase } from './AppShowcase'
 import appPreview from '../../assets/huble-app-preview.png'
 
 export function HeroSection() {
-  const [motionPaused, setMotionPaused] = useState(false)
   return (
-    <section className={`hero${motionPaused ? ' hero-motion-paused' : ''}`} aria-labelledby="hero-title">
+    <section className="hero" aria-labelledby="hero-title">
       <HubBackground />
       <div className="hero-content">
         <h1 id="hero-title">
@@ -33,14 +30,6 @@ export function HeroSection() {
       </div>
       <div className="showcase-wrap">
         <AppShowcase screenshotSrc={appPreview} screenshotAlt="Huble workspace with navigation, weekly time metrics, project statistics, and a work-time breakdown" />
-        <button
-          className="hero-motion-toggle"
-          aria-label={motionPaused ? 'Play background animation' : 'Pause background animation'}
-          onClick={() => setMotionPaused(!motionPaused)}
-        >
-          {motionPaused ? <Play size={13} aria-hidden="true" /> : <Pause size={13} aria-hidden="true" />}
-          <span>{motionPaused ? 'Play motion' : 'Pause motion'}</span>
-        </button>
       </div>
     </section>
   )

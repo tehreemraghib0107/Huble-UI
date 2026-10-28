@@ -1,0 +1,66 @@
+.benefit-preview { width: 100%; max-width: 350px; overflow: hidden; border: 1px solid #dfe5e8; border-radius: 12px; background: #fff; color: #19212d; box-shadow: 0 7px 20px #253e4a0d; font: 10px/1.4 'Instrument Sans', sans-serif; }
+.benefit-preview * { box-sizing: border-box; }
+.benefit-preview-topbar { display: flex; align-items: center; justify-content: space-between; height: 25px; padding: 0 10px; border-bottom: 1px solid #edf0f2; color: #78838b; }
+.benefit-preview-topbar > span { display: flex; gap: 3px; }
+.benefit-preview-topbar > span i { width: 5px; height: 5px; border-radius: 50%; background: #d7dddf; }
+.benefit-preview-topbar > strong { color: #52635f; font-size: 9px; font-weight: 600; }
+.benefit-preview-topbar > svg { width: 12px; color: #89939a; }
+.benefit-preview-current { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 12px 12px 10px; }
+.benefit-preview-current > div { min-width: 0; }
+.benefit-preview-current strong,.benefit-preview-current span { display: block; }
+.benefit-preview-current strong { overflow: hidden; color: #263139; font-size: 11px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.benefit-preview-current > div > span { color: #849099; font-size: 9px; }
+.benefit-preview-switch { display: grid; align-items: center; width: 35px; height: 19px; flex: none; padding: 2px; border-radius: 12px; background: #208b75; }
+.benefit-preview-switch i { width: 15px; height: 15px; margin-left: auto; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px #152b2533; }
+.benefit-preview-stats { display: grid; grid-template-columns: 1fr 1fr; border-block: 1px solid #edf0f2; }
+.benefit-preview-stats > div { position: relative; display: grid; grid-template-columns: 20px 1fr; align-items: center; column-gap: 7px; padding: 10px 12px; }
+.benefit-preview-stats > div + div { border-left: 1px solid #edf0f2; }
+.benefit-preview-stats svg { grid-row: span 2; color: #17836e; }
+.benefit-preview-stats span { color: #75828a; font-size: 8px; }
+.benefit-preview-stats strong { color: #24312e; font-size: 17px; font-weight: 650; line-height: 1.2; }
+.benefit-preview-stats strong small { color: #71807a; font-size: 9px; font-weight: 500; }
+.benefit-preview-stats > div:first-child > i { height: 3px; margin-top: 3px; overflow: hidden; border-radius: 3px; background: #eaf3f0; grid-column: 2; }
+.benefit-preview-stats > div:first-child > i b { display: block; width: 71%; height: 100%; border-radius: inherit; background: #16806e; }
+.benefit-preview-search { display: flex; align-items: center; gap: 7px; margin: 10px 11px 6px; padding: 7px 9px; border: 1px solid #e4e9ec; border-radius: 6px; color: #89939a; }
+.benefit-preview-search kbd { margin-left: auto; border: 1px solid #e2e7e9; border-radius: 3px; padding: 0 3px; color: #7c898f; font: inherit; }
+.benefit-preview-day { display: flex; justify-content: space-between; align-items: center; padding: 8px 12px 7px; color: #40504d; font-weight: 600; }
+.benefit-preview-day span { display: flex; align-items: center; gap: 6px; color: #98a1a5; font-size: 8px; font-weight: 400; }
+.benefit-preview-day span i { width: 18px; height: 1px; background: #d2dadd; }
+.benefit-preview-idle { margin: 10px; padding: 11px; border: 1px solid #e5e9ec; border-radius: 9px; background: #fff; box-shadow: 0 6px 18px #253e4a0b; }
+.benefit-preview-idle-icon { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: #fff4e5; color: #ad752c; }
+.benefit-preview-idle h4 { margin: 8px 0 4px; font-size: 13px; font-weight: 600; }
+.benefit-preview-idle > p { margin: 0 0 9px; color: #77838a; font-size: 9px; line-height: 1.5; }
+.benefit-preview-idle > p strong { color: #46534f; font-weight: 600; }
+.benefit-preview-choice { display: flex; align-items: center; gap: 7px; margin-top: 5px; padding: 6px 7px; border: 1px solid #e6eaed; border-radius: 6px; }
+.benefit-preview-choice.is-selected { border-color: #9dcdbf; background: #f3faf7; }
+.benefit-preview-choice > span { display: grid; place-items: center; width: 12px; height: 12px; flex: none; border: 1px solid #cbd4d8; border-radius: 50%; color: #fff; }
+.benefit-preview-choice.is-selected > span { border-color: #17806e; background: #17806e; }
+.benefit-preview-choice > div { display: grid; gap: 1px; }
+.benefit-preview-choice strong { color: #35423e; font-size: 9px; font-weight: 600; }
+.benefit-preview-choice small { color: #849097; font-size: 8px; }
+.benefit-preview-actions { display: flex; justify-content: flex-end; gap: 6px; margin-top: 8px; }
+.benefit-preview-actions button { min-width: 54px; border: 1px solid #dfe5e8; border-radius: 5px; padding: 5px 8px; background: #fff; color: #52625d; font: inherit; }
+.benefit-preview-actions button:last-child { border-color: #197765; background: #197765; color: #fff; }
+.benefit-preview-task { margin: 0 11px 7px; padding: 8px 9px; border: 1px solid #e4e9ec; border-radius: 7px; background: #fbfcfc; }
+.benefit-preview-task > div { position: relative; display: grid; gap: 2px; padding-right: 56px; }
+.benefit-preview-task > div > strong { overflow: hidden; color: #35413e; font-size: 9px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
+.benefit-preview-task > div > span { overflow: hidden; color: #849097; font-size: 8px; text-overflow: ellipsis; white-space: nowrap; }
+.benefit-preview-task > div > b { position: absolute; top: 3px; right: 0; color: #53625d; font-size: 9px; font-weight: 600; }
+.benefit-preview-task > p { display: flex; justify-content: space-between; margin: 6px 0 0; padding-top: 5px; border-top: 1px solid #edf0f2; color: #7c898f; font-size: 8px; }
+.benefit-preview-task > p strong { color: #56645f; font-weight: 500; }
+.benefit-preview-task.is-compact { padding-block: 7px; }
+.benefit-preview-project { padding: 12px; }
+.benefit-preview-project-heading { display: flex; justify-content: space-between; align-items: center; padding-bottom: 8px; border-bottom: 1px solid #edf0f2; color: #303e39; font-size: 11px; font-weight: 600; }
+.benefit-preview-project-heading small { color: #8b969a; font-size: 8px; font-weight: 400; }
+.benefit-preview-project > p { margin: 8px 0 14px; color: #79858c; font-size: 9px; }
+.benefit-preview-project > label { display: block; margin-bottom: 5px; color: #60706a; font-size: 9px; font-weight: 600; }
+.benefit-preview-rate { display: flex; align-items: center; gap: 6px; padding: 8px 9px; border: 1px solid #e1e7ea; border-radius: 6px; background: #fff; }
+.benefit-preview-rate > span { color: #788680; }
+.benefit-preview-rate > strong { color: #34413c; font-size: 11px; font-weight: 600; }
+.benefit-preview-rate > small { margin-left: auto; color: #89949a; font-size: 8px; }
+.benefit-preview-billable { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 12px; padding: 9px; border: 1px solid #e4e9eb; border-radius: 6px; }
+.benefit-preview-billable > div { display: grid; gap: 2px; }
+.benefit-preview-billable strong { color: #35423e; font-size: 9px; font-weight: 600; }
+.benefit-preview-billable span { color: #89949a; font-size: 8px; }
+.benefit-preview-billable > i { display: flex; align-items: center; width: 29px; height: 16px; flex: none; padding: 2px; border-radius: 10px; background: #17806e; }
+.benefit-preview-billable > i b { width: 12px; height: 12px; margin-left: auto; border-radius: 50%; background: #fff; }

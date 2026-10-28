@@ -1,0 +1,96 @@
+/* A small mint window opens into a five-chapter product walkthrough. */
+.inside-scroll, .inside-static { --inside-ink: #153e36; --inside-mint: #e8f3ed; --inside-muted: #6b8077; }
+.inside-scroll { position: relative; height: 700svh; background: #fafcf9; }
+.inside-sticky { position: sticky; top: 66px; height: calc(100svh - 66px); overflow: hidden; isolation: isolate; }
+.inside-eyebrow { color: #628074; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 500; letter-spacing: .11em; line-height: 1.5; }
+.inside-intro { position: absolute; z-index: 1; top: 16%; left: 0; width: 100%; text-align: center; }
+.inside-intro > .inside-eyebrow { font-size: 11px; letter-spacing: .14em; }
+.inside-intro h2 { margin: 24px 0 20px; color: var(--inside-ink); font-size: clamp(64px, 6.6vw, 96px); font-weight: 500; letter-spacing: -.055em; line-height: .99; }
+.inside-intro h2 em, .inside-static-heading h2 em { font-family: 'Newsreader', Georgia, serif; color: #258472; font-weight: 400; }
+.inside-intro p { margin: 0; color: var(--inside-muted); font-size: 16px; line-height: 1.65; }
+.inside-opening { position: absolute; z-index: 2; left: 50%; transform: translate(-50%, -50%); background: radial-gradient(ellipse at 90% 10%, #dcebd4 0%, transparent 55%), linear-gradient(135deg, #e5f3ee, #f3f6ed); overflow: hidden; border: 1px solid #dce9df; }
+.inside-opening-symbol { display: flex; align-items: center; justify-content: center; gap: 20px; position: absolute; inset: 0; color: #397f6b; }
+.inside-opening-symbol span { height: 20px; width: 1px; background: #aacbbd; }
+.inside-enter { position: absolute; top: 76%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 10px; border: 0; background: transparent; color: #71877d; font-size: 12px; z-index: 1; }
+.inside-experience { position: relative; z-index: 3; max-width: 1260px; height: 100%; padding: clamp(22px, 4vh, 42px) 40px 20px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; }
+.inside-experience-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
+.inside-experience-header p { margin: 4px 0 0; color: var(--inside-ink); font-size: 20px; font-weight: 500; letter-spacing: -.025em; }
+.inside-scroll-hint { display: flex; align-items: center; gap: 8px; font-size: 11px; color: #71877d; }
+.inside-chapter-nav { display: flex; align-items: center; gap: 6px; padding: 6px; border: 1px solid #d6e4da; border-radius: 12px; background: #ffffff66; margin-bottom: clamp(22px, 3.4vh, 38px); }
+.inside-chapter-nav button { display: flex; align-items: center; gap: 10px; flex: 1; border: 0; border-radius: 7px; padding: 11px 14px; color: #688074; background: transparent; font-size: 12px; font-weight: 500; text-align: left; white-space: nowrap; transition: background .2s, color .2s; }
+.inside-chapter-nav button > span { font-family: 'JetBrains Mono', monospace; font-size: 9px; opacity: .6; }
+.inside-chapter-nav button svg { margin-left: auto; }
+.inside-chapter-nav button:hover { background: #ffffffa0; color: var(--inside-ink); }
+.inside-chapter-nav button[aria-current='step'] { background: #185e50; color: #fff; box-shadow: 0 2px 5px #174e5014; }
+.inside-chapter-stage { min-height: 0; }
+.inside-chapter { display: grid; grid-template-columns: .82fr 1.25fr; gap: clamp(36px, 5vw, 76px); align-items: center; }
+.inside-copy { padding-bottom: 8px; }
+.inside-chapter-label { display: flex; align-items: center; gap: 10px; color: #386c5c; font-size: 11px; font-weight: 600; }
+.inside-chapter-label > span { display: grid; place-items: center; width: 32px; height: 32px; background: #fff8; border: 1px solid #cedfd4; border-radius: 9px; }
+.inside-chapter-label small { margin-left: auto; font-family: 'JetBrains Mono', monospace; font-size: 9px; font-weight: 400; color: #7c9686; }
+.inside-copy h3 { margin: 19px 0 14px; font-size: clamp(31px, 3vw, 45px); line-height: 1.08; font-weight: 500; letter-spacing: -.045em; color: var(--inside-ink); }
+.inside-copy h3 em { font-family: 'Newsreader', Georgia, serif; font-weight: 400; color: #3b806b; letter-spacing: -.025em; }
+.inside-summary { margin: 0; max-width: 35ch; font-size: 13px; line-height: 1.65; color: #6a7c72; }
+.inside-feature-list { margin: 24px 0 0; padding: 0; list-style: none; display: grid; gap: 17px; }
+.inside-feature-list li { display: flex; gap: 12px; }
+.inside-feature-dot { margin-top: 6px; flex: 0 0 6px; height: 6px; border: 1px solid #4b8d77; border-radius: 50%; }
+.inside-feature-list h4 { margin: 0 0 4px; color: #294f41; font-size: 12px; font-weight: 600; }
+.inside-feature-list p { margin: 0; max-width: 39ch; color: #6d7f73; font-size: 11.5px; line-height: 1.6; }
+.inside-experience-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; color: #7a9380; font-size: 9px; }
+.inside-experience-footer > span:first-child { display: flex; align-items: center; gap: 7px; }
+.inside-experience-footer > span:last-child { font-family: 'JetBrains Mono', monospace; color: #5c7963; }
+.inside-count-divider { opacity: .4; padding: 0 6px; }
+.inside-progress-track { height: 2px; background: #d7e3d3; margin-top: 13px; }
+.inside-progress-track > div { height: 100%; background: #578f70; transform-origin: left; }
+/* Normal document flow remains the primary experience on touch-sized screens. */
+.inside-static { background: linear-gradient(135deg, #edf6f0, #f7f8ef); padding: 74px max(24px, calc((100% - 1120px) / 2)) 40px; }
+.inside-static-heading { text-align: center; max-width: 620px; margin: 0 auto; }
+.inside-static-heading h2 { color: var(--inside-ink); font-size: clamp(36px, 6vw, 56px); line-height: 1.05; letter-spacing: -.045em; font-weight: 500; margin: 20px 0; }
+.inside-static-heading p { margin: 0; font-size: 14px; line-height: 1.65; color: #6d8476; }
+.inside-static-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; margin: 30px 0 60px; }
+.inside-static-nav a { display: flex; align-items: center; gap: 8px; border: 1px solid #cadccf; border-radius: 30px; padding: 9px 13px; color: #527563; font-size: 11px; background: #ffffff60; }
+.inside-static-nav a:hover { background: white; }
+.inside-static .inside-chapter { padding: 48px 0; border-bottom: 1px solid #d6e3d6; scroll-margin-top: 90px; gap: 32px; }
+.inside-static .inside-chapter:first-of-type { padding-top: 0; }
+.inside-static .inside-copy h3 { font-size: 34px; }
+.inside-endnote { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 12px; line-height: 1.5; color: #708975; padding: 32px 0 0; }
+@media (min-width: 1000px) and (max-height: 800px) {
+  .inside-experience { padding-top: 16px; padding-bottom: 14px; }
+  .inside-experience-header { margin-bottom: 13px; }
+  .inside-experience-header p { font-size: 17px; }
+  .inside-chapter-nav { margin-bottom: 20px; }
+  .inside-chapter-nav button { padding-block: 9px; }
+  .inside-copy h3 { font-size: 36px; margin: 16px 0 12px; }
+  .inside-feature-list { margin-top: 19px; gap: 14px; }
+  .inside-experience-footer { padding-top: 16px; }
+}
+@media (max-width: 760px) {
+  .inside-static { padding-top: 58px; padding-inline: 22px; }
+  .inside-static .inside-chapter { grid-template-columns: 1fr; gap: 28px; padding-block: 44px; }
+  .inside-copy { max-width: 520px; }
+  .inside-copy h3 { font-size: 36px !important; }
+  .inside-summary { max-width: 42ch; font-size: 14px; }
+  .inside-feature-list { gap: 17px; }
+  .inside-feature-list h4 { font-size: 13px; }
+  .inside-feature-list p { font-size: 12px; max-width: 48ch; }
+  .inside-chapter-label small { margin-left: 15px; }
+  .inside-endnote { font-size: 11px; }
+}
+
+.inside-experience-header .inside-eyebrow { display: block; }
+.inside-experience-header p { line-height: 1.3; }
+.inside-chapter-stage { flex-shrink: 0; }
+@media (min-width: 1000px) and (max-height: 800px) {
+  .inside-chapter-nav { margin-bottom: 16px; }
+  .inside-experience-footer { padding-top: 12px; }
+}
+.inside-experience-header, .inside-chapter-nav, .inside-experience-footer { flex-shrink: 0; }
+
+/* Faithful application panels use the same proportions as the supplied screens. */
+.inside-product-window { width: 100%; max-width: 630px; margin-inline: auto; padding: 12px; border: 1px solid #dce5e8; border-radius: 22px; background: #f0f5f8; box-shadow: 0 24px 50px -28px #294e4526; }
+.inside-scroll .inside-product-window { width: min(100%, calc((100svh - 258px) * 1.1)); max-width: 630px; min-height: min(570px, calc(100svh - 258px)); }
+@media (max-width: 760px) {
+  .inside-product-window { padding: 9px; border-radius: 17px; }
+}
+
+.inside-experience-footer i { width: 5px; height: 5px; border-radius: 50%; background: #58a382; }
