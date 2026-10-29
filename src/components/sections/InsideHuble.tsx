@@ -73,7 +73,7 @@ function ChapterContent({ index, id, enabled = true }: { index: number; id?: str
   const Icon = chapter.icon
   return <article className="inside-chapter" id={id} aria-label={chapter.name}>
     <div className="inside-copy">
-      <div className="inside-chapter-label"><span><Icon size={17} /></span>{chapter.name}<small>0{index + 1} / 05</small></div>
+      <div className="inside-chapter-label"><span><Icon size={17} /></span>{chapter.name}</div>
       <h3>{chapter.title}<br /><em>{chapter.accent}</em></h3>
       <p className="inside-summary">{chapter.summary}</p>
       <ul className="inside-feature-list">{chapter.features.map(feature => <li key={feature.title}><span className="inside-feature-dot" /><div><h4>{feature.title}</h4><p>{feature.description}</p></div></li>)}</ul>
@@ -134,9 +134,9 @@ function ScrollWalkthrough() {
       <motion.button type="button" className="inside-enter" onClick={() => goToChapter(0)} style={{ opacity: introOpacity }} inert={opened} aria-hidden={opened}>Scroll to step inside <ArrowDown size={14} /></motion.button>
       <motion.div className="inside-experience" style={{ opacity: contentOpacity, y: contentY }} inert={!opened} aria-hidden={!opened}>
         <header className="inside-experience-header"><div><span className="inside-eyebrow">SEE WHAT’S INSIDE HUBLE</span><p>One connected workspace.</p></div><span className="inside-scroll-hint">Scroll to explore <ArrowDown size={13} /></span></header>
-        <nav className="inside-chapter-nav" aria-label="Explore Huble features">{chapters.map((chapter, index) => <button type="button" key={chapter.name} aria-current={active === index ? 'step' : undefined} onClick={() => goToChapter(index)}><span>0{index + 1}</span>{chapter.short}{active === index && <ArrowRight size={13} />}</button>)}</nav>
+        <nav className="inside-chapter-nav" aria-label="Explore Huble features">{chapters.map((chapter, index) => <button type="button" key={chapter.name} aria-current={active === index ? 'step' : undefined} onClick={() => goToChapter(index)}>{chapter.short}{active === index && <ArrowRight size={13} />}</button>)}</nav>
         <div className="inside-chapter-stage"><AnimatePresence initial={false} mode="wait"><motion.div key={active} initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -16 }} transition={{ duration: .22, ease: 'easeOut' }}><ChapterContent index={active} enabled={opened} /></motion.div></AnimatePresence></div>
-        <div className="inside-experience-footer"><span><i /> Time. Projects. People. All connected.</span><span>0{active + 1}<span className="inside-count-divider"> / </span>05</span></div>
+        <div className="inside-experience-footer"><span><i /> Time. Projects. People. All connected.</span></div>
         <div className="inside-progress-track"><motion.div style={{scaleX:progress}} /></div>
       </motion.div>
     </div>
