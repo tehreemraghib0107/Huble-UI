@@ -67,7 +67,7 @@ export function SiteHeader() {
             </button>
             {open === 'product' && <div className="dropdown-panel" id="product-links">{productLinks}</div>}
           </div>
-          <a className="nav-link" href="https://gethuble.com/pricing">Pricing</a>
+          <a className="nav-link" href="#pricing">Pricing</a>
         </nav>
         <div className="nav-actions">
           <div className="dropdown">
@@ -87,7 +87,7 @@ export function SiteHeader() {
       {mobileOpen && (
         <nav className="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
           <details><summary>Product <ChevronDown size={14} /></summary><div>{productLinks}</div></details>
-          <a href="https://gethuble.com/pricing">Pricing</a>
+          <a href="#pricing" onClick={() => setMobileOpen(false)}>Pricing</a>
           <details><summary>Download <Download size={14} /></summary><div>{downloadLinks}</div></details>
           <a href="https://app.gethuble.com/auth?authType=signin">Sign in</a>
           <a className="button button-primary" href={signupUrl}>Start free</a>

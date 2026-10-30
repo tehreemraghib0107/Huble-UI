@@ -3,6 +3,10 @@ import { HeroSection } from '../components/sections/HeroSection'
 import { CompanyStrip } from '../components/sections/CompanyStrip'
 import { TrackingBenefits } from '../components/sections/TrackingBenefits'
 import { InsideHuble } from '../components/sections/InsideHuble'
+import { IntegrationsSection } from '../components/sections/IntegrationsSection'
+import { CustomerStories } from '../components/sections/CustomerStories'
+import { PricingSection } from '../components/sections/PricingSection'
+import { SiteFooter } from '../components/sections/SiteFooter'
 
 export function HomePage() {
   return (
@@ -14,7 +18,11 @@ export function HomePage() {
         <CompanyStrip />
         <InsideHuble />
         <TrackingBenefits />
+        <IntegrationsSection />
+        <CustomerStories />
+        <PricingSection />
       </main>
+      <SiteFooter />
     </>
   )
 }

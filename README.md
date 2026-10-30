@@ -74,3 +74,29 @@ The pinned experience requires a viewport at least 1000px wide and 720px tall. S
 The benefits section uses a white background and four CSS/SVG illustrations with a single click/tap toggle per card. All preview content is React and CSS, based on the live gethuble.com timer, idle review, Today sessions, and billable project cards reviewed October 29, 2026. No screenshots are used in these cards. The timer ticks while its preview is visible; idle-time choices, Stop/Resume, the billable switch, and bill-rate editing are local demonstrations only. Hidden card faces are inert. Entry animations and ticking respect reduced-motion preferences, and timers stop while offscreen. Cards switch to two columns below 1100px and one below 580px.
 
 Walkthrough chapter numbers have been removed from the navigation, labels, and footer. Summary text is 17px; feature descriptions are 14px on desktop and 15px on mobile, with darker colors for readability.
+
+## Integrations
+
+`IntegrationsSection.tsx` follows the benefits section with a deep teal (#102e29) background, mint typography, and an animated connection diagram. It uses the six integration names and SVG logos shown on gethuble.com, reviewed October 30, 2026; the locally saved logos are in `src/assets/integrations/`. Hover, keyboard focus, or tap highlights a tool's path to Huble and identifies its category. These are illustrative connections, not live account connection states. The CTA uses the existing Huble signup URL.
+
+SVG connection signals run only while the section is in view and become static under reduced-motion preferences. The layout stacks below 1000px, with smaller logo nodes below 540px and 380px. No new dependencies or network calls are needed for the section.
+
+## Customer stories
+
+`CustomerStories.tsx` follows integrations with a warm-white, full-width story rail. The four quotes, names, roles, and companies are preserved from gethuble.com, reviewed October 30, 2026. Typography, initials, topic icons, and subtle card colors replace the meme and video-call imagery. No ratings, reviewer photos, verification badges, additional reviewers, or customer-count claims have been invented.
+
+An identical second group enables the seamless visual loop and is hidden from assistive technology. Motion stops offscreen, on hover or focus, and permanently after manual browsing. Visitors can use keyboard arrows or native touch scrolling. The supplementary introduction, navigation buttons, and footer sentence are omitted for a cleaner presentation. Reduced-motion preferences disable automatic movement. Cards retain full quote text and use responsive widths; the CTA points to the existing signup destination.
+
+
+## Pricing
+
+`PricingSection.tsx` adds the one-plan pricing section after customer stories. A dark teal offer panel sits beside the complete 17-feature list. Native radio inputs switch between $99 monthly and $79 per month billed annually ($948 per year), with annual selected by default. The 20% savings label rounds the 20.2% difference against monthly billing. Prices and features were checked against both billing options at https://gethuble.com/pricing on October 30, 2026.
+
+The price transition and card entrance respect reduced-motion preferences through the existing Motion configuration. The layout stacks below 780px; the feature list becomes one column below 400px. Header Pricing links navigate to this section, and the trial CTA retains the existing signup destination. Selecting a billing period only updates this preview; it does not purchase a plan or change an account.
+
+
+## Footer
+
+`SiteFooter.tsx` closes the homepage with a dark teal footer, the existing Huble wordmark, product and company links, platform download cards, and legal links. Destinations and the explicitly “in progress” compliance labels follow the live Huble footer reviewed October 30, 2026. The local Pricing link points to the homepage section. “System status” links to the status page without presenting a hard-coded operational claim.
+
+Cookie preferences opens a native modal dialog with Escape dismissal, focus trapping, and focus return to its trigger. It describes the current preview, which installs no optional analytics or advertising tracking; there are no pretend consent toggles or live-service preference changes. Connect the production consent manager here if optional tracking is introduced. Footer columns wrap to three and two columns on smaller viewports. No floating chat widget or additional external scripts are added.

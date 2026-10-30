@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react'
-import { ArrowDown, ArrowRight, BarChart3, Check, Clock3, FolderKanban, Layers3, Monitor, Users } from 'lucide-react'
+import { ArrowDown, ArrowRight, BarChart3, Check, Clock3, FolderKanban, Monitor, Users } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { AppFeatureView } from './AppFeatureViews'
 import './inside-huble.css'
@@ -97,19 +97,21 @@ function ScrollWalkthrough() {
   const sectionRef = useRef<HTMLElement>(null)
   const [active, setActive] = useState(0)
   const [opened, setOpened] = useState(false)
+  const [showScroll, setShowScroll] = useState(true)
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ['start start', 'end end'] })
   const introOpacity = useTransform(scrollYProgress, [0.025, 0.11], [1, 0])
   const introY = useTransform(scrollYProgress, [0, 0.13], [0, -80])
   const openingWidth = useTransform(scrollYProgress, [0.025, 0.19], ['14%', '100%'])
   const openingHeight = useTransform(scrollYProgress, [0.025, 0.19], ['10%', '100%'])
   const openingRadius = useTransform(scrollYProgress, [0.025, 0.19], ['40px', '0px'])
-  const openingTop = useTransform(scrollYProgress, [0.025, 0.19], ['65%', '50%'])
+  const openingTop = useTransform(scrollYProgress, [0.025, 0.19], ['72%', '50%'])
   const openingIconOpacity = useTransform(scrollYProgress, [0.02, 0.065], [1, 0])
   const contentOpacity = useTransform(scrollYProgress, [0.16, 0.215], [0, 1])
   const contentY = useTransform(scrollYProgress, [0.16, 0.215], [55, 0])
   const progress = useTransform(scrollYProgress, [0.215, 1], [0, 1])
 
   useMotionValueEvent(scrollYProgress, 'change', value => {
+    setShowScroll(value < 0.065)
     setOpened(value >= 0.205)
     setActive(Math.min(4, Math.max(0, Math.floor((value - 0.215) / 0.157))))
   })
@@ -128,10 +130,9 @@ function ScrollWalkthrough() {
         <h2>See what’s<br /><em>inside</em> Huble.</h2>
         <p>Every hour has a story.<br />Follow it through your working day.</p>
       </motion.div>
-      <motion.div className="inside-opening" style={{ width: openingWidth, height: openingHeight, borderRadius: openingRadius, top: openingTop }} aria-hidden="true">
-        <motion.div className="inside-opening-symbol" style={{ opacity: openingIconOpacity }}><Layers3 size={22} /><span /><ArrowDown size={18} /></motion.div>
+      <motion.div className="inside-opening" style={{ width: openingWidth, height: openingHeight, borderRadius: openingRadius, top: openingTop }}>
+        <motion.button type="button" className="inside-opening-symbol" onClick={() => goToChapter(0)} style={{ opacity: openingIconOpacity }} inert={!showScroll} aria-hidden={!showScroll}>Scroll <ArrowDown size={20} aria-hidden="true" /></motion.button>
       </motion.div>
-      <motion.button type="button" className="inside-enter" onClick={() => goToChapter(0)} style={{ opacity: introOpacity }} inert={opened} aria-hidden={opened}>Scroll to step inside <ArrowDown size={14} /></motion.button>
       <motion.div className="inside-experience" style={{ opacity: contentOpacity, y: contentY }} inert={!opened} aria-hidden={!opened}>
         <header className="inside-experience-header"><div><span className="inside-eyebrow">SEE WHAT’S INSIDE HUBLE</span><p>One connected workspace.</p></div><span className="inside-scroll-hint">Scroll to explore <ArrowDown size={13} /></span></header>
         <nav className="inside-chapter-nav" aria-label="Explore Huble features">{chapters.map((chapter, index) => <button type="button" key={chapter.name} aria-current={active === index ? 'step' : undefined} onClick={() => goToChapter(index)}>{chapter.short}{active === index && <ArrowRight size={13} />}</button>)}</nav>

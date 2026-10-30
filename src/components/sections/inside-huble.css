@@ -9,9 +9,8 @@
 .inside-intro h2 em, .inside-static-heading h2 em { font-family: 'Newsreader', Georgia, serif; color: #258472; font-weight: 400; }
 .inside-intro p { margin: 0; color: var(--inside-muted); font-size: 16px; line-height: 1.65; }
 .inside-opening { position: absolute; z-index: 2; left: 50%; transform: translate(-50%, -50%); background: radial-gradient(ellipse at 90% 10%, #dcebd4 0%, transparent 55%), linear-gradient(135deg, #e5f3ee, #f3f6ed); overflow: hidden; border: 1px solid #dce9df; }
-.inside-opening-symbol { display: flex; align-items: center; justify-content: center; gap: 20px; position: absolute; inset: 0; color: #397f6b; }
-.inside-opening-symbol span { height: 20px; width: 1px; background: #aacbbd; }
-.inside-enter { position: absolute; top: 76%; left: 50%; transform: translateX(-50%); display: flex; align-items: center; gap: 8px; padding: 10px; border: 0; background: transparent; color: #71877d; font-size: 12px; z-index: 1; }
+.inside-opening-symbol { display: flex; align-items: center; justify-content: center; gap: 12px; position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: transparent; color: #397f6b; font-size: 17px; font-weight: 500; }
+.inside-opening-symbol:focus-visible { outline-offset: -6px; border-radius: inherit; }
 .inside-experience { position: relative; z-index: 3; max-width: 1260px; height: 100%; padding: clamp(22px, 4vh, 42px) 40px 20px; margin: 0 auto; display: flex; flex-direction: column; justify-content: center; }
 .inside-experience-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 22px; }
 .inside-experience-header p { margin: 4px 0 0; color: var(--inside-ink); font-size: 20px; font-weight: 500; letter-spacing: -.025em; }
